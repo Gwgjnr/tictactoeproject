@@ -1,3 +1,10 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# import random function for game
+# ask for name
+# ask if you want to be x or o
+# def for deciding who goes first
+# ask for position (add exceptions for invalid input)
+# draw computor position
+# def for drawing grid
+# add elif for win conditions
+# add def to check if its a draw if board is full
+# declare winner and ask if they wany to play again
