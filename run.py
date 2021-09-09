@@ -2,9 +2,10 @@
 # ask for name
 
 def game():
-    print('welcome to TICTACTOE!')
+    print('welcome to TICTACTOE!\n')
     name = input("Please enter your name: ")
-    print(f'Thanks, {name}')
+    print(f'Thanks, {name}\n')
+    print(f'{name} [X] --- Computer [O]\n')
 # ask if you want to be x or o
 # def for deciding who goes first
 # ask for position (add exceptions for invalid input)
