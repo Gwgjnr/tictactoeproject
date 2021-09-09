@@ -1,9 +1,13 @@
 import random
+import time
+import sys
+
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 
 def startGame():
-    print(f'{name} [X] --- Computer [O]\n')
+    print_slow(f'{name} [X] --- Computer [O]\n')
+    print(' ')
     drawBoard()
     randomFirstPlayer()
 
@@ -28,20 +32,28 @@ def randomFirstPlayer():
 
 def playerTurn():
     selection = int(input("Please select your position using your numpad: "))
+    print(' ')
     board[selection] = "X"
     drawBoard()
     computerTurn()
 
 
 def computerTurn():
-    print('Computers turn...\n')
-    print('.....\n')
-    print('...\n')
+    print_slow("Its the computers turn\n")
+    print_slow('.....\n')
+    print_slow('...\n')
+    print(' ')
     selection = random.randint(0, 8)
     board[selection] = "O"
     drawBoard()
     playerTurn()
 
+
+def print_slow(str):
+    for letter in str:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(0.1)
 # ask for position (add exceptions for invalid input)
 # add elif for win conditions
 # add def to check if its a draw if board is full
@@ -49,8 +61,11 @@ def computerTurn():
 
 
 print('welcome to TICTACTOE!\n')
-name = input('Please enter your name: \n')
-print(f'Welcome {name}, you can pick your position using your number pad\n')
+name = input('Please enter your name: ')
+print(' ')
+print_slow(f'Welcome {name}, you can pick your position using your num pad: ')
+print(' ')
+print(' ')
 print('7|8|9')
 print('-+-+-')
 print('4|5|6')
