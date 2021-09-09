@@ -1,21 +1,19 @@
 import random
-# ask for name
-board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 
 def startGame():
-    print(f'Thanks, {name}\n')
     print(f'{name} [X] --- Computer [O]\n')
     drawBoard()
     randomFirstPlayer()
 
 
 def drawBoard():
-    print(f'{board[0]}|{board[1]}|{board[2]}')
+    print(f'{board[7]}|{board[8]}|{board[9]}')
     print("-+-+-")
-    print(f'{board[3]}|{board[4]}|{board[5]}')
+    print(f'{board[4]}|{board[5]}|{board[6]}')
     print("-+-+-")
-    print(f'{board[6]}|{board[7]}|{board[8]}\n')
+    print(f'{board[1]}|{board[2]}|{board[3]}\n')
 
 
 def randomFirstPlayer():
@@ -43,16 +41,19 @@ def computerTurn():
     board[selection] = "O"
     drawBoard()
     playerTurn()
-# def for deciding who goes first
+
 # ask for position (add exceptions for invalid input)
-# draw computor position
 # add elif for win conditions
 # add def to check if its a draw if board is full
 # declare winner and ask if they wany to play again
 
 
 print('welcome to TICTACTOE!\n')
-name = input("Please enter your name: ")
-
-
+name = input('Please enter your name: \n')
+print(f'Welcome {name}, you can pick your position using your number pad\n')
+print('7|8|9')
+print('-+-+-')
+print('4|5|6')
+print('-+-+-')
+print('1|2|3\n')
 startGame()
