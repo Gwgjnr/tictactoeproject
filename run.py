@@ -3,7 +3,7 @@ import time
 import sys
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-winner = False
+turns = 9
 
 
 def startGame():
@@ -32,10 +32,9 @@ def randomFirstPlayer():
 
 
 def playerTurn():
-    selection = int(input("Please select your position using your numpad: "))
+    checkPosition()
     print(' ')
-    board[selection] = "X"
-    drawBoard()
+    checkPosition()
     computerTurn()
 
 
@@ -50,6 +49,26 @@ def computerTurn():
     playerTurn()
 
 
+def checkPosition():
+    while turns != 0:
+        try:
+            selection = int(input("Please select your spot on your numpad: "))
+        except ValueError:
+            print("Please select a number and position using your numpad!")
+            continue
+        if selection not in range(0, 8):
+            print("\nThe numbers must be between 1-9!")
+            continue
+        if board[selection] == "X" or board[selection] == "O":
+            print("\nThis position is already taken!\n")
+            continue
+        else:
+            board[selection] = "X"
+            drawBoard()
+            computerTurn()
+
+
+'''
 def checkWin():
     # Horizontal Wins
     if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):
@@ -72,6 +91,7 @@ def checkWin():
         winner = True
     else:
         winner = False
+'''
 
 
 def print_slow(str):
@@ -80,6 +100,7 @@ def print_slow(str):
         sys.stdout.flush()
         time.sleep(0.1)
 # ask for position (add exceptions for invalid input)
+
 # add elif for win conditions
 # add def to check if its a draw if board is full
 # declare winner and ask if they wany to play again
