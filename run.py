@@ -22,19 +22,19 @@ def drawBoard():
 
 
 def randomFirstPlayer():
+    print_slow('Randomly deciding who goes first...\n')
     firstPlayer = random.randint(1, 2)
     if firstPlayer == 1:
-        print(f'{name} will go first\n')
+        print(f'\n{name} will go first\n')
         playerTurn()
     elif firstPlayer == 2:
-        print('Computer will go first\n')
+        print('\nThe Computer will go first\n')
         computerTurn()
 
 
 def playerTurn():
-    checkPosition()
     print(' ')
-    checkPosition()
+    pickPosition()
     computerTurn()
 
 
@@ -43,29 +43,45 @@ def computerTurn():
     print_slow('.....\n')
     print_slow('...\n')
     print(' ')
-    selection = random.randint(0, 8)
-    board[selection] = "O"
-    drawBoard()
+    computerPosition()
     playerTurn()
 
 
-def checkPosition():
+def pickPosition():
     while turns != 0:
         try:
             selection = int(input("Please select your spot on your numpad: "))
         except ValueError:
             print("Please select a number and position using your numpad!")
             continue
-        if selection not in range(0, 8):
+        if selection not in range(0, 10):
             print("\nThe numbers must be between 1-9!")
             continue
         if board[selection] == "X" or board[selection] == "O":
             print("\nThis position is already taken!\n")
             continue
         else:
+            print(' ')
             board[selection] = "X"
             drawBoard()
             computerTurn()
+
+
+def computerPosition():
+    while turns != 0:
+        try:
+            selection = random.randint(0, 9)
+        except ValueError:
+            continue
+        if selection not in range(0, 10):
+            continue
+        if board[selection] == "X" or board[selection] == "O":
+            continue
+        else:
+            print(' ')
+            board[selection] = "O"
+            drawBoard()
+            pickPosition()
 
 
 '''
@@ -99,11 +115,6 @@ def print_slow(str):
         sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(0.1)
-# ask for position (add exceptions for invalid input)
-
-# add elif for win conditions
-# add def to check if its a draw if board is full
-# declare winner and ask if they wany to play again
 
 
 print('welcome to TICTACTOE!\n')
