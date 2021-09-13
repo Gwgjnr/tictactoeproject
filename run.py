@@ -1,6 +1,5 @@
 import random
 import time
-import os
 import sys
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
@@ -114,16 +113,18 @@ def checkWin():
 
 
 def rematch():
+    global board
     if winner:
         print('\nGame over!\n')
         rematch = input('Would you like to play again (y/n)?')
         print(' ')
         if rematch.lower() == 'y':
-            os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
+            board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+            randomFirstPlayer()
         if rematch.lower() == 'n':
             print('Thank you for playing my TICTACTOE game!\n')
-        print('Closing programme')
-        sys.exit()
+            print('Closing programme')
+            sys.exit()
 
 
 def print_slow(str):
