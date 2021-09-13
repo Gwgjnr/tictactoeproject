@@ -66,6 +66,8 @@ def pickPosition():
             print(' ')
             board[selection] = "X"
             drawBoard()
+            checkWin()
+            winAnnouncer()
             computerTurn()
             turns -= 1
     else:
@@ -88,44 +90,50 @@ def computerPosition():
             board[selection] = "O"
             drawBoard()
             pickPosition()
+            checkWin()
+            winAnnouncer()
             turns -= 1
     else:
         print("This game is a draw")
         rematch()
 
 
-'''
 def checkWin():
-    # Horizontal Wins
+    global winner
     if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):
-        return True
+        winner = True
     elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):
-        return True
+        winner = True
     elif(board[7] == board[8] and board[8] == board[9] and board[7] != ' '):
-        return True
+        winner = True
     # Vertical Wins
     elif(board[1] == board[4] and board[4] == board[7] and board[1] != ' '):
-        return True
+        winner = True
     elif(board[2] == board[5] and board[5] == board[8] and board[2] != ' '):
-        return True
+        winner = True
     elif(board[3] == board[6] and board[6] == board[9] and board[3] != ' '):
-        return True
+        winner = True
     # Diagonal Wins
     elif(board[1] == board[5] and board[5] == board[9] and board[5] != ' '):
-        return True
+        winner = True
     elif(board[3] == board[5] and board[5] == board[7] and board[5] != ' '):
-        return True
+        winner = True
     else:
-        return False
-'''
+        winner = False
+
+
+def winAnnouncer():
+    if winner:
+        print('Game over!\n')
+        rematch()
 
 
 def rematch():
-    rematch = input("Would you like to play again (y/n)? ")
+    rematch = input('Would you like to play again (y/n)?\n')
     if rematch.lower() == 'y':
         startGame()
     if rematch.lower() == 'n':
-        print("Thank you for playing my TICTACTOE game!")
+        print('Thank you for playing my TICTACTOE game!')
 
 
 def print_slow(str):
