@@ -64,7 +64,7 @@ def pickPosition():
             board[selection] = "X"
             drawBoard()
             checkWin()
-            winAnnouncer()
+            rematch()
             computerTurn()
 
 
@@ -78,7 +78,7 @@ def computerPosition():
             board[selection] = "O"
             drawBoard()
             checkWin()
-            winAnnouncer()
+            rematch()
             playerTurn()
 
 
@@ -113,19 +113,15 @@ def checkWin():
         winner = False
 
 
-def winAnnouncer():
+def rematch():
     if winner:
         print('\nGame over!\n')
-        rematch()
-
-
-def rematch():
-    rematch = input('Would you like to play again (y/n)?')
-    print(' ')
-    if rematch.lower() == 'y':
-        os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
-    if rematch.lower() == 'n':
-        print('Thank you for playing my TICTACTOE game!\n')
+        rematch = input('Would you like to play again (y/n)?')
+        print(' ')
+        if rematch.lower() == 'y':
+            os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
+        if rematch.lower() == 'n':
+            print('Thank you for playing my TICTACTOE game!\n')
         print('Closing programme')
         sys.exit()
 
@@ -140,7 +136,7 @@ def print_slow(str):
 print('welcome to TICTACTOE!\n')
 name = input('Please enter your name: ')
 print(' ')
-print_slow(f'Welcome {name}, you can pick your position using your num pad: ')
+print_slow(f'Hello {name}, you can pick your position using your num pad: ')
 print(' ')
 print(' ')
 print('7|8|9')
