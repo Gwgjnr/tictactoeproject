@@ -9,7 +9,7 @@ winner = False
 
 
 def startGame():
-    print_slow(f'{name} [X] --- Computer [O]\n')
+    print_slow(f'{name} [ X ] <<<--->>> Computer [ O ]\n')
     print(' ')
     drawBoard()
     randomFirstPlayer()
@@ -101,6 +101,7 @@ def computerPosition():
 
 def checkWin():
     global winner
+    # Horizontal Wins
     if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):
         winner = True
     elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):
