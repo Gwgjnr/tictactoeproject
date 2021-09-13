@@ -1,5 +1,6 @@
 import random
 import time
+import os
 import sys
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
@@ -56,7 +57,7 @@ def pickPosition():
         except ValueError:
             print("Please select a number and position using your numpad!")
             continue
-        if selection not in range(0, 10):
+        if selection not in range(1, 10):
             print("\nThe numbers must be between 1-9!")
             continue
         if board[selection] == "X" or board[selection] == "O":
@@ -78,10 +79,10 @@ def computerPosition():
     global turns
     while turns != 0:
         try:
-            selection = random.randint(0, 9)
+            selection = random.randint(1, 9)
         except ValueError:
             continue
-        if selection not in range(0, 10):
+        if selection not in range(1, 10):
             continue
         if board[selection] == "X" or board[selection] == "O":
             continue
@@ -131,9 +132,10 @@ def winAnnouncer():
 def rematch():
     rematch = input('Would you like to play again (y/n)?\n')
     if rematch.lower() == 'y':
-        startGame()
+        os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
     if rematch.lower() == 'n':
         print('Thank you for playing my TICTACTOE game!')
+        sys.exit()
 
 
 def print_slow(str):
