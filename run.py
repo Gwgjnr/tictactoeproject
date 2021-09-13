@@ -103,6 +103,12 @@ def checkWin():
         winner = True
     elif(board[3] == board[5] and board[5] == board[7] and board[5] != ' '):
         winner = True
+    # Draw Game
+    elif(board[1] != ' ' and board[2] != ' ' and board[3] != ' ' and
+         board[4] != ' ' and board[5] != ' ' and board[6] != ' ' and
+         board[7] != ' ' and board[8] != ' ' and board[9] != ' '):
+        print('This game is a draw\n')
+        rematch()
     else:
         winner = False
 
