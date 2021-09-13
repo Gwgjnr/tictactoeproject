@@ -4,7 +4,6 @@ import os
 import sys
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-turns = 9
 winner = False
 
 
@@ -37,7 +36,6 @@ def randomFirstPlayer():
 def playerTurn():
     print(' ')
     pickPosition()
-    computerTurn()
 
 
 def computerTurn():
@@ -46,12 +44,10 @@ def computerTurn():
     print_slow('...\n')
     print(' ')
     computerPosition()
-    playerTurn()
 
 
 def pickPosition():
-    global turns
-    while turns != 0:
+    while True:
         try:
             selection = int(input("Please select your spot on your numpad: "))
         except ValueError:
@@ -70,33 +66,20 @@ def pickPosition():
             checkWin()
             winAnnouncer()
             computerTurn()
-            turns -= 1
-    else:
-        print("This game is a draw")
 
 
 def computerPosition():
-    global turns
-    while turns != 0:
-        try:
-            selection = random.randint(1, 9)
-        except ValueError:
-            continue
-        if selection not in range(1, 10):
-            continue
+    while True:
+        selection = random.randint(1, 9)
         if board[selection] == "X" or board[selection] == "O":
             continue
         else:
             print(' ')
             board[selection] = "O"
             drawBoard()
-            pickPosition()
             checkWin()
             winAnnouncer()
-            turns -= 1
-    else:
-        print("This game is a draw")
-        rematch()
+            playerTurn()
 
 
 def checkWin():
@@ -126,16 +109,18 @@ def checkWin():
 
 def winAnnouncer():
     if winner:
-        print('Game over!\n')
+        print('\nGame over!\n')
         rematch()
 
 
 def rematch():
-    rematch = input('Would you like to play again (y/n)?\n')
+    rematch = input('Would you like to play again (y/n)?')
+    print(' ')
     if rematch.lower() == 'y':
         os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
     if rematch.lower() == 'n':
-        print('Thank you for playing my TICTACTOE game!')
+        print('Thank you for playing my TICTACTOE game!\n')
+        print('Closing programme')
         sys.exit()
 
 
