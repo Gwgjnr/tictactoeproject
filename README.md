@@ -44,3 +44,21 @@ Click here to view the live project.
 
 * Give option for player v player games
 * Give different difficulty options for the computer
+
+## Testing
+
+### Bugs
+
+#### Resolved Bugs
+
+* I found that the computers position would not appear on the board sometimes and this was due to me providing the randint with the range (1, 10). As the second number is inclusive this meant that the computer was selecting a position off the board. 
+
+#### Remaining Bugs
+
+* There are no remaining bugs.
+
+#### Validator Testing
+
+## Deployment
+
+## Credits
