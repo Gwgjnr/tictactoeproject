@@ -1,31 +1,35 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# TIC-TAC-TERMINAL
 
-Welcome Gwgjnr,
+![preview](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+TIC-TAC-TERMINAL is a Python terminal game which runs in the Code Institue mock terminal on Heroku.
 
-## Reminders
+The player can try to beat the computer by taking turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Click here to view the live project.
 
-## Creating the Heroku app
+## How to play
+ 
+* On your turn you can pick a spot on the grid using your num pad.
+* The computer will then select a spot.
+* The player who first marks 3 diagonal, horizontal, or vertical spots is the winner.
+* If all spots on the board are filled then the game is a draw.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Existing Features
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+* Random decision on how goes first.
+    At the start of each game, the computer randomly decides who goes first and then announces it. 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+* Ability to play against the computer.
 
-Connect your GitHub repository and deploy as normal.
+* The grid is drawn and updated during each turn. 
 
-## Constraints
+* Askes for user input
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* Validates user input and raises exceptions if not a blank space on the board.
 
------
-Happy coding!
+* Option of a rematch once a game is over. 
+
+### Future Features

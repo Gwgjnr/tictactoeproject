@@ -48,7 +48,7 @@ def computerTurn():
 def pickPosition():
     while True:
         try:
-            selection = int(input("Please select your spot on your numpad: "))
+            selection = int(input("Please select your spot on the numpad: \n"))
         except ValueError:
             print("\nPlease select a number and position using your numpad\n")
             continue
@@ -147,7 +147,7 @@ def checkWin():
 def rematch():
     global board
     if winner:
-        rematch = input('Would you like to play again (y/n)?')
+        rematch = input('Would you like to play again (y/n)?\n')
         print(' ')
         if rematch.lower() == 'y':
             board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
@@ -169,7 +169,7 @@ def print_slow(str):
 print('----------------------------')
 print('welcome to TIC-TAC-TERMINAL!')
 print('----------------------------\n')
-name = input('Please enter your name: ')
+name = input('Please enter your name: \n')
 print(' ')
 print_slow(f'Hello {name}, you can pick your position using your num pad: ')
 print(' ')
