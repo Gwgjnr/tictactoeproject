@@ -1,6 +1,6 @@
 # TIC-TAC-TERMINAL
 
-![preview](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![intro image](images/intro.PNG)
 
 TIC-TAC-TERMINAL is a Python terminal game which runs in the Code Institue mock terminal on Heroku.
 
@@ -10,7 +10,7 @@ Click here to view the live project.
 
 ## How to play
  
-* On your turn you can pick a spot on the grid using your num pad.
+* On your turn you can pick an empty spot on the grid using your num pad.
 * The computer will then select a spot.
 * The player who first marks 3 diagonal, horizontal, or vertical spots is the winner.
 * If all spots on the board are filled then the game is a draw.
@@ -22,7 +22,11 @@ Click here to view the live project.
 * Random decision on how goes first.
     At the start of each game, the computer randomly decides who goes first and then announces it. 
 
+![random decider image](images/random.PNG)
+
 * Ability to play against the computer.
+
+![computers turn image](images/computerturn.PNG)
 
 * The grid is drawn and updated during each turn. 
 
@@ -30,6 +34,13 @@ Click here to view the live project.
 
 * Validates user input and raises exceptions if not a blank space on the board.
 
+![user validation image](images/exceptions.PNG)
+
 * Option of a rematch once a game is over. 
 
+![random image](images/rematch.PNG)
+
 ### Future Features
+
+* Give option for player v player games
+* Give different difficulty options for the computer
