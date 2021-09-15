@@ -249,22 +249,54 @@ def checkWin():
     # Horizontal Wins
     if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):
         winner = True
+        if board[1] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):
         winner = True
+        if board[4] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     elif(board[7] == board[8] and board[8] == board[9] and board[7] != ' '):
         winner = True
+        if board[7] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     # Vertical Wins
     elif(board[1] == board[4] and board[4] == board[7] and board[1] != ' '):
         winner = True
+        if board[1] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     elif(board[2] == board[5] and board[5] == board[8] and board[2] != ' '):
         winner = True
+        if board[2] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     elif(board[3] == board[6] and board[6] == board[9] and board[3] != ' '):
         winner = True
+        if board[3] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     # Diagonal Wins
     elif(board[1] == board[5] and board[5] == board[9] and board[5] != ' '):
         winner = True
+        if board[1] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     elif(board[3] == board[5] and board[5] == board[7] and board[5] != ' '):
         winner = True
+        if board[3] == 'X':
+            print('Congratulations, you won!')
+        else:
+            print('Hard luck, you lost.')
     # Draw Game
     elif(board[1] != ' ' and board[2] != ' ' and board[3] != ' ' and
          board[4] != ' ' and board[5] != ' ' and board[6] != ' ' and
@@ -278,7 +310,6 @@ def checkWin():
 def rematch():
     global board
     if winner:
-        print('\nGame over!\n')
         rematch = input('Would you like to play again (y/n)?')
         print(' ')
         if rematch.lower() == 'y':
