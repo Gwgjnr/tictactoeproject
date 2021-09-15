@@ -47,11 +47,19 @@ Click here to view the live project.
 
 ## Testing
 
+I have tested the code by doing the following:
+
+* Manually entered invalid values when asked for an input to check exceptions.
+* Passed Python code through the PEP8 checker and confirmed there was no issues.
+* Play tested on both the gitpod and Heroku terminal. 
+
 ### Bugs
 
 #### Resolved Bugs
 
-* I found that the computers position would not appear on the board sometimes and this was due to me providing the randint with the range (1, 10). As the second number is inclusive this meant that the computer was selecting a position off the board. 
+* I found that the computers position would not appear on the board sometimes which was due to me providing the randint with the range (1, 10). As the second number is inclusive this meant that the computer was to select a position off the board. 
+
+* My Wincheck Def was not updating the winner variable, this was due to me forgetting to include global keyword within the def. 
 
 #### Remaining Bugs
 
@@ -61,4 +69,16 @@ Click here to view the live project.
 
 ## Deployment
 
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+* Steps for deployment:
+  - Fork or clone this repository.
+  - Create a new Heroku app.
+  - Set the buildbacks to Python and NodeJS in that order.
+  - Link the Heroku App to the repository.
+  - Click on Deploy.
+
 ## Credits
+
+* Code institute for the deployment terminal.
+* My mentor, Daisy McGirr for her guidance on this project. 
