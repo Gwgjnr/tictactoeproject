@@ -50,10 +50,10 @@ def pickPosition():
         try:
             selection = int(input("Please select your spot on your numpad: "))
         except ValueError:
-            print("Please select a number and position using your numpad!")
+            print("\nPlease select a number and position using your numpad\n")
             continue
         if selection not in range(1, 10):
-            print("\nThe numbers must be between 1-9!")
+            print("\nThe numbers must be between 1-9!\n")
             continue
         if board[selection] == "X" or board[selection] == "O":
             print("\nThis position is already taken!\n")
@@ -68,169 +68,6 @@ def pickPosition():
 
 
 def computerPosition():
-    '''
-    # Horizontal checks
-    if(board[1] == 'X' and board[2] == 'X' and board[3] == ' '):
-        board[3] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[1] == 'X' and board[3] == 'X' and board[2] == ' '):
-        board[2] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[2] == 'X' and board[3] == 'X' and board[1] == ' '):
-        board[1] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[4] == 'X' and board[5] == 'X' and board[6] == ' '):
-        board[6] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[4] == 'X' and board[6] == 'X' and board[5] == ' '):
-        board[5] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[5] == 'X' and board[6] == 'X' and board[4] == ' '):
-        board[4] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[7] == 'X' and board[8] == 'X' and board[9] == ' '):
-        board[9] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[7] == 'X' and board[9] == 'X' and board[8] == ' '):
-        board[8] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[8] == 'X' and board[9] == 'X' and board[7] == ' '):
-        board[7] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    # Vertical checks
-    elif(board[1] == 'X' and board[4] == 'X' and board[7] == ' '):
-        board[7] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[1] == 'X' and board[7] == 'X' and board[4] == ' '):
-        board[4] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[4] == 'X' and board[7] == 'X' and board[1] == ' '):
-        board[1] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[2] == 'X' and board[5] == 'X' and board[8] == ' '):
-        board[8] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[2] == 'X' and board[8] == 'X' and board[5] == ' '):
-        board[5] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[5] == 'X' and board[8] == 'X' and board[2] == ' '):
-        board[2] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[3] == 'X' and board[6] == 'X' and board[9] == ' '):
-        board[9] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[3] == 'X' and board[9] == 'X' and board[6] == ' '):
-        board[6] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[6] == 'X' and board[9] == 'X' and board[3] == ' '):
-        board[3] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    # Diagonal checks
-    elif(board[1] == 'X' and board[5] == 'X' and board[9] == ' '):
-        board[9] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[1] == 'X' and board[9] == 'X' and board[5] == ' '):
-        board[5] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[5] == 'X' and board[9] == 'X' and board[1] == ' '):
-        board[1] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[7] == 'X' and board[5] == 'X' and board[3] == ' '):
-        board[3] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[7] == 'X' and board[3] == 'X' and board[5] == ' '):
-        board[5] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    elif(board[5] == 'X' and board[3] == 'X' and board[7] == ' '):
-        board[7] == 'Y'
-        drawBoard()
-        checkWin()
-        rematch()
-        playerTurn()
-    else:
-        while True:
-            selection = random.randint(1, 9)
-            if board[selection] == "X" or board[selection] == "O":
-                continue
-            else:
-                print(' ')
-                board[selection] = "O"
-                drawBoard()
-                checkWin()
-                rematch()
-                playerTurn()
-
-
-'''
     while True:
         selection = random.randint(1, 9)
         if board[selection] == "X" or board[selection] == "O":
@@ -250,53 +87,53 @@ def checkWin():
     if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):
         winner = True
         if board[1] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.')
     elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):
         winner = True
         if board[4] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
-            print('Hard luck, you lost.')
+            print('Hard luck, you lost.\n')
     elif(board[7] == board[8] and board[8] == board[9] and board[7] != ' '):
         winner = True
         if board[7] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
-            print('Hard luck, you lost.')
+            print('Hard luck, you lost.\n')
     # Vertical Wins
     elif(board[1] == board[4] and board[4] == board[7] and board[1] != ' '):
         winner = True
         if board[1] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
-            print('Hard luck, you lost.')
+            print('Hard luck, you lost.\n')
     elif(board[2] == board[5] and board[5] == board[8] and board[2] != ' '):
         winner = True
         if board[2] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
-            print('Hard luck, you lost.')
+            print('Hard luck, you lost.\n')
     elif(board[3] == board[6] and board[6] == board[9] and board[3] != ' '):
         winner = True
         if board[3] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
-            print('Hard luck, you lost.')
+            print('Hard luck, you lost.\n')
     # Diagonal Wins
     elif(board[1] == board[5] and board[5] == board[9] and board[5] != ' '):
         winner = True
         if board[1] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
-            print('Hard luck, you lost.')
+            print('Hard luck, you lost.\n')
     elif(board[3] == board[5] and board[5] == board[7] and board[5] != ' '):
         winner = True
         if board[3] == 'X':
-            print('Congratulations, you won!')
+            print('Congratulations, you won!\n')
         else:
-            print('Hard luck, you lost.')
+            print('Hard luck, you lost.\n')
     # Draw Game
     elif(board[1] != ' ' and board[2] != ' ' and board[3] != ' ' and
          board[4] != ' ' and board[5] != ' ' and board[6] != ' ' and
@@ -321,6 +158,7 @@ def rematch():
             sys.exit()
 
 
+# Created def to print slow using codegrepper.com examples
 def print_slow(str):
     for letter in str:
         sys.stdout.write(letter)
@@ -328,7 +166,9 @@ def print_slow(str):
         time.sleep(0.1)
 
 
-print('welcome to TICTACTOE!\n')
+print('----------------------------')
+print('welcome to TIC-TAC-TERMINAL!')
+print('----------------------------\n')
 name = input('Please enter your name: ')
 print(' ')
 print_slow(f'Hello {name}, you can pick your position using your num pad: ')
