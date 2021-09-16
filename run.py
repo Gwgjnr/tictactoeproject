@@ -253,10 +253,10 @@ print(Fore.GREEN + 'Welcome to TIC-TAC-TERMINAL!')
 print('----------------------------\n')
 getName()
 print(' ')
-print('Tic-tac-toe is a paper-and-pencil game for two players, who take \
+print('Tic-tac-toe is a paper-and-pencil game for two players, who \ntake \
 turns marking the spaces in a 3×3 grid.\n')
 print('The player who succeeds in placing three of their marks in a \
-diagonal, horizontal, or vertical row is the winner.\n')
+diagonal,\nhorizontal, or vertical row is the winner.\n')
 print_slow(f'Hello {name}, you can pick your position using your num pad: ')
 print(' ')
 print(' ')
