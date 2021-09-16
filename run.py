@@ -116,7 +116,8 @@ def checkWin():
     """
     Checks the position of the marks on the board after each player selects
     a position to check if there is a winner. Changes the value of the
-    global variable to True if a condition is met.
+    global variable to True if a condition is met. Prints board showing the
+    winner marks.
     """
     global winner
     # Horizontal Wins
@@ -132,7 +133,6 @@ def checkWin():
         drawBoard()
     elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):
         winner = True
-
         if board[4] == 'X':
             print('Congratulations, you won!\n')
         else:
