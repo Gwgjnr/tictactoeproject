@@ -14,11 +14,11 @@ def startGame():
 
 
 def drawBoard():
-    print(f'{board[7]}|{board[8]}|{board[9]}')
-    print("-+-+-")
-    print(f'{board[4]}|{board[5]}|{board[6]}')
-    print("-+-+-")
-    print(f'{board[1]}|{board[2]}|{board[3]}\n')
+    print(f' {board[7]}|{board[8]}|{board[9]}')
+    print(" -+-+-")
+    print(f' {board[4]}|{board[5]}|{board[6]}')
+    print(" -+-+-")
+    print(f' {board[1]}|{board[2]}|{board[3]}\n')
 
 
 def randomFirstPlayer():
@@ -34,6 +34,7 @@ def randomFirstPlayer():
 
 def playerTurn():
     print(' ')
+    print('Its your turn\n')
     pickPosition()
 
 
@@ -167,7 +168,7 @@ def print_slow(str):
 
 
 print('----------------------------')
-print('welcome to TIC-TAC-TERMINAL!')
+print('Welcome to TIC-TAC-TERMINAL!')
 print('----------------------------\n')
 name = input('Please enter your name: \n')
 print(' ')
