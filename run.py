@@ -1,6 +1,8 @@
 import random
 import time
 import sys
+from colorama import Fore, Style, init
+init(autoreset=True)
 
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 winner = False
@@ -124,18 +126,31 @@ def checkWin():
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.')
+        board[1] = Fore.RED + board[1] + Style.RESET_ALL
+        board[2] = Fore.RED + board[2] + Style.RESET_ALL
+        board[3] = Fore.RED + board[3] + Style.RESET_ALL
+        drawBoard()
     elif(board[4] == board[5] and board[5] == board[6] and board[4] != ' '):
         winner = True
+
         if board[4] == 'X':
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.\n')
+        board[4] = Fore.RED + board[4] + Style.RESET_ALL
+        board[5] = Fore.RED + board[5] + Style.RESET_ALL
+        board[6] = Fore.RED + board[6] + Style.RESET_ALL
+        drawBoard()
     elif(board[7] == board[8] and board[8] == board[9] and board[7] != ' '):
         winner = True
         if board[7] == 'X':
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.\n')
+        board[7] = Fore.RED + board[7] + Style.RESET_ALL
+        board[8] = Fore.RED + board[8] + Style.RESET_ALL
+        board[9] = Fore.RED + board[9] + Style.RESET_ALL
+        drawBoard()
     # Vertical Wins
     elif(board[1] == board[4] and board[4] == board[7] and board[1] != ' '):
         winner = True
@@ -143,18 +158,30 @@ def checkWin():
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.\n')
+        board[1] = Fore.RED + board[1] + Style.RESET_ALL
+        board[4] = Fore.RED + board[4] + Style.RESET_ALL
+        board[7] = Fore.RED + board[7] + Style.RESET_ALL
+        drawBoard()
     elif(board[2] == board[5] and board[5] == board[8] and board[2] != ' '):
         winner = True
         if board[2] == 'X':
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.\n')
+        board[2] = Fore.RED + board[2] + Style.RESET_ALL
+        board[5] = Fore.RED + board[5] + Style.RESET_ALL
+        board[8] = Fore.RED + board[8] + Style.RESET_ALL
+        drawBoard()
     elif(board[3] == board[6] and board[6] == board[9] and board[3] != ' '):
         winner = True
         if board[3] == 'X':
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.\n')
+        board[3] = Fore.RED + board[3] + Style.RESET_ALL
+        board[6] = Fore.RED + board[6] + Style.RESET_ALL
+        board[9] = Fore.RED + board[9] + Style.RESET_ALL
+        drawBoard()
     # Diagonal Wins
     elif(board[1] == board[5] and board[5] == board[9] and board[5] != ' '):
         winner = True
@@ -162,12 +189,20 @@ def checkWin():
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.\n')
+        board[1] = Fore.RED + board[1] + Style.RESET_ALL
+        board[5] = Fore.RED + board[5] + Style.RESET_ALL
+        board[9] = Fore.RED + board[9] + Style.RESET_ALL
+        drawBoard()
     elif(board[3] == board[5] and board[5] == board[7] and board[5] != ' '):
         winner = True
         if board[3] == 'X':
             print('Congratulations, you won!\n')
         else:
             print('Hard luck, you lost.\n')
+        board[3] = Fore.RED + board[3] + Style.RESET_ALL
+        board[5] = Fore.RED + board[5] + Style.RESET_ALL
+        board[7] = Fore.RED + board[7] + Style.RESET_ALL
+        drawBoard()
     # Draw Game
     elif(board[1] != ' ' and board[2] != ' ' and board[3] != ' ' and
          board[4] != ' ' and board[5] != ' ' and board[6] != ' ' and
@@ -213,7 +248,7 @@ def print_slow(str):
 
 
 print('----------------------------')
-print('Welcome to TIC-TAC-TERMINAL!')
+print(Fore.GREEN + 'Welcome to TIC-TAC-TERMINAL!')
 print('----------------------------\n')
 getName()
 print(' ')
