@@ -174,7 +174,14 @@ def print_slow(str):
 print('----------------------------')
 print('Welcome to TIC-TAC-TERMINAL!')
 print('----------------------------\n')
-name = input('Please enter your name: \n')
+while True:
+    name = input("Please enter your name:\n")
+    if name.isalpha():
+        break
+    else:
+        print("Please enter a valid name.\n")
+        continue
+
 print(' ')
 print_slow(f'Hello {name}, you can pick your position using your num pad: ')
 print(' ')
