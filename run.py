@@ -49,15 +49,15 @@ def computerTurn():
 def pickPosition():
     while True:
         try:
-            selection = int(input("Please select your spot on the numpad: \n"))
+            selection = int(input("Please select your spot on the numpad:\n"))
         except ValueError:
             print("\nPlease select a number and position using your numpad\n")
             continue
         if selection not in range(1, 10):
-            print("\nThe numbers must be between 1-9!\n")
+            print("\nThe number must be between 1-9\n")
             continue
         if board[selection] == "X" or board[selection] == "O":
-            print("\nThis position is already taken!\n")
+            print("\nThis position is already taken\n")
             continue
         else:
             print(' ')
@@ -148,15 +148,19 @@ def checkWin():
 def rematch():
     global board
     if winner:
-        rematch = input('Would you like to play again (y/n)?\n')
+        replay = input('Would you like to play again (y/n)?\n')
         print(' ')
-        if rematch.lower() == 'y':
-            board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-            randomFirstPlayer()
-        if rematch.lower() == 'n':
-            print('Thank you for playing my TICTACTOE game!\n')
-            print('Closing programme')
-            sys.exit()
+        while True:
+            if replay.lower() == 'y':
+                board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+                randomFirstPlayer()
+            if replay.lower() == 'n':
+                print('Thank you for playing my TICTACTOE game!\n')
+                print('Closing programme')
+                sys.exit()
+            else:
+                print('Please choose y or n\n')
+                rematch()
 
 
 # Created def to print slow using codegrepper.com examples
@@ -175,9 +179,9 @@ print(' ')
 print_slow(f'Hello {name}, you can pick your position using your num pad: ')
 print(' ')
 print(' ')
-print('7|8|9')
-print('-+-+-')
-print('4|5|6')
-print('-+-+-')
-print('1|2|3\n')
+print(' 7|8|9')
+print(' -+-+-')
+print(' 4|5|6')
+print(' -+-+-')
+print(' 1|2|3\n')
 startGame()
