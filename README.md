@@ -11,16 +11,16 @@ The player can try to beat the computer by taking turns marking the spaces in a 
 ## How to play
  
 * On your turn you can pick an empty spot on the grid using your num pad.
-* The computer will then select a spot.
+* The computer will then select an available spot.
 * The player who first marks 3 diagonal, horizontal, or vertical spots is the winner.
-* If all spots on the board are filled then the game is a draw.
+* If all spots on the board are filled without 3 in a row then the game is a draw.
 
 ## Features
 
 ### Existing Features
 
-* Random decision on how goes first.
-    At the start of each game, the computer randomly decides who goes first and then announces it. 
+* Random decision on who goes first.
+    At the start of each game, the computer randomly decides who goes first using the random module and then announces it. 
 
 ![random decider image](images/random.PNG)
 
@@ -30,7 +30,7 @@ The player can try to beat the computer by taking turns marking the spaces in a 
 
 * The grid is drawn and updated during each turn. 
 
-* Askes for user input
+* Askes for user input.
 
 * Validates user input and raises exceptions if not a blank space on the board.
 
