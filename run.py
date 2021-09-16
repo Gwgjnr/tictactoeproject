@@ -208,6 +208,7 @@ def checkWin():
          board[4] != ' ' and board[5] != ' ' and board[6] != ' ' and
          board[7] != ' ' and board[8] != ' ' and board[9] != ' '):
         print('This game is a draw\n')
+        winner = True
         rematch()
     else:
         winner = False
