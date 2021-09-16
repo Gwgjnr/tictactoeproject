@@ -1,6 +1,6 @@
 # TIC-TAC-TERMINAL
 
-![intro image](images/intro.PNG)
+![intro image](images/opener.PNG)
 
 TIC-TAC-TERMINAL is a Python terminal game which runs in the Code Institue mock terminal on Heroku.
 
@@ -20,19 +20,17 @@ The player can try to beat the computer by taking turns marking the spaces in a 
 ### Existing Features
 
 * Random decision on who goes first.
-    At the start of each game, the computer randomly decides who goes first using the random module and then announces it. 
+    At the start of each game, the computer randomly decides who goes first using the random module and then calls that player's turn. 
 
 ![random decider image](images/random.PNG)
 
-* Ability to play against the computer.
+* Ability to play against the computer. The computer uses the random module to randomly select an empty location on the grid. 
 
 ![computers turn image](images/computerturn.PNG)
 
-* The grid is drawn and updated during each turn. 
+* The grid is drawn and updated during each turn. The grid is created using print statements and list indexing. The layout is set to match the standard number pad on a keyboard to easily select a . 
 
-* Askes for user input.
-
-* Validates user input and raises exceptions if not a blank space on the board.
+* Askes for user input and validates the user's selection. Input can raise an exception if the user does not enter an integer when selecting a location. The function also checks that the number entered is between 1-9 and not filled. 
 
 ![user validation image](images/exceptions.PNG)
 
@@ -45,6 +43,17 @@ The player can try to beat the computer by taking turns marking the spaces in a 
 * Give option for player v player games
 * Give different difficulty options for the computer
 
+### Technologies Used
+
+* Github
+  - Github is used to create, store and maintain all codes in a repository.
+  - Github is also used as the site hosting service for the final website to be published on.
+* Gitpod
+  - Gitpod has been used as a local code editor to write and manage all codes and files.
+* Python
+  - Python is used as the main programming language to creat this project.
+* Colorama
+  - Provides a cross-platform API to print colored terminal text from Python applications.
 ## Testing
 
 I have tested the code by doing the following:
@@ -69,9 +78,7 @@ I have tested the code by doing the following:
 
 * There are no remaining bugs.
 
-#### Validator Testing
-
-## Deployment
+### Deployment
 
 This project was deployed using Code Institute's mock terminal for Heroku.
 
@@ -84,37 +91,24 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 ### Making a clone or download zip to run locally
 
-1. Log into GitHub account.
-
-2. Select repository.
-
-3. Select TICTACTOEPROJECT.
-
-4. Click on the Code dropdown button next to the green Gitpod button.
-
-5. Click on the clipboard icon to copy the clone URL.
-
-6. Open Git Bash.
-
-7. Change the current working directory to the location where you want the cloned directory.
-
-8. Type "git clone" in the Command Line and then paste the URL copied in step 5.
-
-9. Press enter to create your local clone.
-
-10. Alternately, click on Download ZIP, unpack locally and open with a local code editor.
+* Log into GitHub account.
+* Select repository.
+* Select TICTACTOEPROJECT.
+* Click on the Code dropdown button next to the green Gitpod button.
+* Click on the clipboard icon to copy the clone URL.
+* Open Git Bash.
+* Change the current working directory to the location where you want the cloned directory.
+* Type "git clone" in the Command Line and then paste the URL copied in step 5.
+* Press enter to create your local clone.
+* Alternately, click on Download ZIP, unpack locally and open with a local code editor.
 
 ### Forking the GitHub Repository
 
-1. Log into GitHub.
-
-2. Select repository.
-
-3. Select TICTACTOEPROJECT.
-
-4. At the very top right corner click "fork".
-
-5. You will have a copy of the original repository in your own GitHub account.
+* Log into GitHub.
+* Select repository.
+* Select TICTACTOEPROJECT.
+* At the very top right corner click "fork".
+* You will have a copy of the original repository in your own GitHub account.
 
 ## Credits
 
