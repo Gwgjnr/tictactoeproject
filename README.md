@@ -45,6 +45,10 @@ The player can try to beat the computer by taking turns marking the spaces in a 
 * Give option for player v player games
 * Give different difficulty options for the computer
 
+### Game Logic
+
+![flowchart image](images/gamelogic.PNG)
+
 ### Technologies Used
 
 * Github
@@ -58,7 +62,7 @@ The player can try to beat the computer by taking turns marking the spaces in a 
   - Provides a cross-platform API to print colored terminal text from Python applications.
 * Heroku
   - Heroku is a platform that enables developers to build, run, and operate applications entirely in the cloud.
-  
+
 ## Testing
 
 I have tested the code by doing the following:
