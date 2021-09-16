@@ -6,7 +6,26 @@ board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 winner = False
 
 
+def getName():
+    '''
+    Checks that name inputted is valid and not empty by ensuring
+    all characters are alphabetic.
+    '''
+    global name
+    while True:
+        name = input("Please enter your name:\n")
+        if name.isalpha():
+            break
+        else:
+            print("Please enter a valid name.\n")
+            continue
+
+
 def startGame():
+    '''
+    Shows the player what mark they will be using and calls the
+    randomFirstPlayer function.
+    '''
     print_slow(f'{name} [ X ] <<<--->>> Computer [ O ]\n')
     print(' ')
     drawBoard()
@@ -14,6 +33,10 @@ def startGame():
 
 
 def drawBoard():
+    '''
+    Creates the board layout and can be called during turns to
+    display updated positions.
+    '''
     print(f' {board[7]}|{board[8]}|{board[9]}')
     print(" -+-+-")
     print(f' {board[4]}|{board[5]}|{board[6]}')
@@ -22,6 +45,10 @@ def drawBoard():
 
 
 def randomFirstPlayer():
+    '''
+    Uses the random module to decide which player will go first
+    at the start of each game and then calls that player's turn
+    '''
     print_slow('Randomly deciding who goes first...\n')
     firstPlayer = random.randint(1, 2)
     if firstPlayer == 1:
@@ -33,20 +60,12 @@ def randomFirstPlayer():
 
 
 def playerTurn():
-    print(' ')
-    print('Its your turn\n')
-    pickPosition()
-
-
-def computerTurn():
-    print_slow("Its the computers turn\n")
-    print_slow('.....\n')
-    print_slow('...\n')
-    print(' ')
-    computerPosition()
-
-
-def pickPosition():
+    '''
+    Allows player to select a valid position on the board by passing input
+    through exception and validation. Then calls for the board to be displayed,
+    checks for win/draw and passes back to computer if false.
+    '''
+    print(f"Its {name}'s turn\n")
     while True:
         try:
             selection = int(input("Please select your spot on the numpad:\n"))
@@ -68,7 +87,16 @@ def pickPosition():
             computerTurn()
 
 
-def computerPosition():
+def computerTurn():
+    '''
+    Announced the computers turn before selecting an empty spot using
+    the random module. Then calls for the board to be displayed, checks for
+    win/draw and passes back to player if false.
+    '''
+    print_slow("Its the computers turn\n")
+    print_slow('.....\n')
+    print_slow('...\n')
+    print(' ')
     while True:
         selection = random.randint(1, 9)
         if board[selection] == "X" or board[selection] == "O":
@@ -83,6 +111,11 @@ def computerPosition():
 
 
 def checkWin():
+    '''
+    Checks the position of the marks on the board after each player selects
+    a position to check if there is a winner. Changes the value of the
+    global variable to True if a condition is met.
+    '''
     global winner
     # Horizontal Wins
     if(board[1] == board[2] and board[2] == board[3] and board[1] != ' '):
@@ -146,6 +179,10 @@ def checkWin():
 
 
 def rematch():
+    '''
+    Checks each turn if the variable winner has been updated to True and then
+    offers a new game. Validates to ensure input is either y or n.
+    '''
     global board
     if winner:
         replay = input('Would you like to play again (y/n)?\n')
@@ -163,8 +200,12 @@ def rematch():
                 rematch()
 
 
-# Created def to print slow using codegrepper.com examples
 def print_slow(str):
+    '''
+    Allows for print statements to be displayed slowly as if they were being
+    typed. This allows the player time to read the instructions. Created from
+    example: https://www.codegrepper.com/code-examples/python/python+slow+print
+    '''
     for letter in str:
         sys.stdout.write(letter)
         sys.stdout.flush()
@@ -174,14 +215,7 @@ def print_slow(str):
 print('----------------------------')
 print('Welcome to TIC-TAC-TERMINAL!')
 print('----------------------------\n')
-while True:
-    name = input("Please enter your name:\n")
-    if name.isalpha():
-        break
-    else:
-        print("Please enter a valid name.\n")
-        continue
-
+getName()
 print(' ')
 print_slow(f'Hello {name}, you can pick your position using your num pad: ')
 print(' ')
