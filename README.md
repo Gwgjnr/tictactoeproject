@@ -22,21 +22,23 @@ The player can try to beat the computer by taking turns marking the spaces in a 
 * Random decision on who goes first.
     At the start of each game, the computer randomly decides who goes first using the random module and then calls that player's turn. 
 
-![random decider image](images/random.PNG)
+![random decider image](images/randompicker.PNG)
 
 * Ability to play against the computer. The computer uses the random module to randomly select an empty location on the grid. 
 
-![computers turn image](images/computerturn.PNG)
+![computers turn image](images/compturn.PNG)
 
 * The grid is drawn and updated during each turn. The grid is created using print statements and list indexing. The layout is set to match the standard number pad on a keyboard to easily select a . 
 
 * Askes for user input and validates the user's selection. Input can raise an exception if the user does not enter an integer when selecting a location. The function also checks that the number entered is between 1-9 and not filled. 
 
-![user validation image](images/exceptions.PNG)
+![user validation image](images/playerexceptions.PNG)
 
-* Option of a rematch once a game is over. 
+* Provides option of a rematch once a game is over. Checks the input to ensure the user is either y or n and requests input again if invalid input is provided. Checks the randomw first player function if y is selected and exits programme if n is selected. 
 
-![random image](images/rematch.PNG)
+* Colorama is an API that allows the user to print coloured text in the terminal. This is used to display the winning marks on the board.
+
+![colorama image](images/colorama.PNG)
 
 ### Future Features
 
@@ -54,6 +56,9 @@ The player can try to beat the computer by taking turns marking the spaces in a 
   - Python is used as the main programming language to creat this project.
 * Colorama
   - Provides a cross-platform API to print colored terminal text from Python applications.
+* Heroku
+  - Heroku is a platform that enables developers to build, run, and operate applications entirely in the cloud.
+  
 ## Testing
 
 I have tested the code by doing the following:
