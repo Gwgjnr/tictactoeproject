@@ -36,7 +36,7 @@ def startGame():
 
 def drawBoard():
     """
-    Creates the board layout and can be called during turns to
+    Creates the board layout and can be called during each turn to
     display updated positions.
     """
     print(f' {board[7]}|{board[8]}|{board[9]}')
@@ -64,8 +64,8 @@ def randomFirstPlayer():
 def playerTurn():
     """
     Allows player to select a valid position on the board by passing input
-    through exception and validation. Then calls for the board to be displayed,
-    checks for win/draw and passes back to computer if false.
+    through exception and validation. Then calls the functions for the board
+    to be displayed, checks for win/draw and passes back to computer if false.
     """
     print(f"Its {name}'s turn\n")
     while True:
@@ -92,10 +92,10 @@ def playerTurn():
 def computerTurn():
     """
     Announced the computers turn before selecting an empty spot using
-    the random module. Then calls for the board to be displayed, checks for
-    win/draw and passes back to player if false.
+    the random module. Then calls functions for the board to be
+    displayed, checks for win/draw and passes back to player if false.
     """
-    print_slow("Its the computers turn\n")
+    print_slow("Its the computer's turn\n")
     print_slow('.....\n')
     print_slow('...\n')
     print(' ')
@@ -117,7 +117,7 @@ def checkWin():
     Checks the position of the marks on the board after each player selects
     a position to check if there is a winner. Changes the value of the
     global variable to True if a condition is met. Prints board showing the
-    winner marks.
+    winning marks.
     """
     global winner
     # Horizontal Wins
@@ -217,7 +217,8 @@ def checkWin():
 def rematch():
     """
     Checks each turn if the variable winner has been updated to True and then
-    offers a new game. Validates to ensure input is either y or n.
+    offers a new game if the condition is met. Validates to ensure input is
+    either y or n.
     """
     global board
     if winner:
@@ -238,7 +239,7 @@ def rematch():
 
 def print_slow(str):
     """
-    Print statements are displayed slowly as though they were being typed.
+    Print statements can be displayed slowly as though they were being typed.
     This allows the player time to read the instructions. Created from
     example: https://www.codegrepper.com/code-examples/python/python+slow+print
     """

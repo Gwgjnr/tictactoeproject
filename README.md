@@ -53,11 +53,11 @@ The player can try to beat the computer by taking turns marking the spaces in a 
 
 * Github
   - Github is used to create, store and maintain all codes in a repository.
-  - Github is also used as the site hosting service for the final website to be published on.
+ published on.
 * Gitpod
   - Gitpod has been used as a local code editor to write and manage all codes and files.
 * Python
-  - Python is used as the main programming language to creat this project.
+  - Python is used as the main programming language to create this project.
 * Colorama
   - Provides a cross-platform API to print colored terminal text from Python applications.
 * Heroku
