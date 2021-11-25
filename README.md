@@ -1,4 +1,4 @@
-# TIC-TAC-TERMINAL
+# TIC-TAC-TERMINAL Grade: Merit
 
 ![intro image](images/opener.PNG)
 
